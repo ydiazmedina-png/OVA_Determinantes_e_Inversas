@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido | OVA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="img/logo.webp" alt="Logo CINTIA" class="logo">
+      </div>
+
+      <nav class="menu">
+        <a class="menu-btn" href="introduccion.html">🚀 Introducción</a>
+        <a class="menu-btn" href="objetivos.html">🎯 Objetivos</a>
+        <a class="menu-btn active" href="contenido.html">📚 Contenido</a>
+        <a class="menu-btn" href="actividades.html">✍️ Actividades</a>
+        <a class="menu-btn" href="evaluacion.html">✔️ Evaluación</a>
+        <a class="menu-btn" href="recursos.html">📖 Recursos</a>
+        <a class="menu-btn" href="bibliografia.html">📚 Bibliografía</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-section">
+        <div class="page-card">
+         
+
+          <div class="content-navigation">
+            <div class="nav-tabs">
+              <button class="tab-btn active tab-btn-dynamic" data-tab="determinantes">Determinantes</button>
+              <button class="tab-btn tab-btn-dynamic" data-tab="inversas">Matrices Inversas</button>
+              <button class="tab-btn tab-btn-dynamic" data-tab="aplicaciones">Aplicaciones</button>
+              <button class="tab-btn tab-btn-dynamic" data-tab="visualizaciones">🖼️ Visualizaciones</button>
+            </div>
+          </div>
+
+          <!-- TAB 1: DETERMINANTES -->
+          <div id="determinantes" class="tab-content active">
+            
+            <div class="content-section">
+              <h2>1. Definición de Determinante</h2>
+              
+              <div class="definition-box dynamic-box">
+                <h3>Definición</h3>
+                <p>
+                  El <strong>determinante</strong> es un valor numérico que se asocia a una matriz cuadrada y que proporciona información importante sobre sus propiedades algebraicas.
+                </p>
+                <div class="math-box math-box-dynamic">
+                  <span>Para una matriz \( A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \)</span>
+                  <span>\( \det(A) = ad - bc \)</span>
+                </div>
+              </div>
+
+              <div class="properties-box dynamic-box">
+                <h3>Propiedades de los Determinantes</h3>
+                <ul class="properties-list properties-list-dynamic">
+                  <li><strong>Propiedad 1:</strong> \(\det(A^T) = \det(A)\) (determinante de la transpuesta)</li>
+                  <li><strong>Propiedad 2:</strong> \(\det(kA) = k^n \det(A)\) donde n es el orden de la matriz</li>
+                  <li><strong>Propiedad 3:</strong> \(\det(AB) = \det(A) \cdot \det(B)\)</li>
+                  <li><strong>Propiedad 4:</strong> Si dos filas (o columnas) son iguales, el determinante es cero</li>
+                  <li><strong>Propiedad 5:</strong> Si se intercambian dos filas (o columnas), el determinante cambia de signo</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>2. Cálculo de Determinantes</h2>
+              
+              <div class="method-box dynamic-box">
+                <h3>Matrices de orden 2×2</h3>
+                <p>Para una matriz \( A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} \)</p>
+                <div class="formula-box dynamic-box">
+                  <span>\( \det(A) = a_{11}a_{22} - a_{12}a_{21} \)</span>
+                </div>
+                <div class="example-box dynamic-box">
+                  <h4>Ejemplo:</h4>
+                  <span>\( A = \begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix} \)</span>
+                  <span>\( \det(A) = (3)(4) - (2)(1) = 12 - 2 = 10 \)</span>
+                </div>
+              </div>
+
+              <div class="method-box">
+                <h3>Matrices de orden 3×3 - Regla de Sarrus</h3>
+                <p>Para una matriz \( A = \begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33} \end{pmatrix} \)</p>
+                
+                <div class="sarrus-diagram">
+                  <div class="sarrus-step">
+                    <h4>Paso 1: Repetir las dos primeras columnas</h4>
+                    <div class="matrix-extended">
+                      <span>\( \begin{array}{ccc|cc} a_{11} & a_{12} & a_{13} & a_{11} & a_{12} \\ a_{21} & a_{22} & a_{23} & a_{21} & a_{22} \\ a_{31} & a_{32} & a_{33} & a_{31} & a_{32} \end{array} \)</span>
+                    </div>
+                  </div>
+                  
+                  <div class="sarrus-step">
+                    <h4>Paso 2: Sumar productos de diagonales principales</h4>
+                    <span>\( (+) a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} \)</span>
+                  </div>
+                  
+                  <div class="sarrus-step">
+                    <h4>Paso 3: Restar productos de diagonales secundarias</h4>
+                    <span>\( (-) a_{13}a_{22}a_{31} - a_{11}a_{23}a_{32} - a_{12}a_{21}a_{33} \)</span>
+                  </div>
+                </div>
+
+                <div class="example-box dynamic-box">
+                  <h4>Ejemplo:</h4>
+                  <span>\( A = \begin{pmatrix} 2 & 1 & 3 \\ 0 & 4 & -1 \\ 2 & 0 & 1 \end{pmatrix} \)</span>
+                  <span>\( \det(A) = (2)(4)(1) + (1)(-1)(2) + (3)(0)(0) - (3)(4)(2) - (2)(-1)(0) - (1)(0)(1) \)</span>
+                  <span>\( \det(A) = 8 - 2 + 0 - 24 + 0 - 0 = -18 \)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>3. Interpretación Geométrica</h2>
+              
+              <div class="geometric-box dynamic-box">
+                <p>El determinante tiene una importante interpretación geométrica:</p>
+                <ul class="geometric-list">
+                  <li><strong>En 2D:</strong> Representa el área del paralelogramo formado por los vectores columna</li>
+                  <li><strong>En 3D:</strong> Representa el volumen del paralelepípedo formado por los vectores columna</li>
+                  <li><strong>Signo:</strong> Indica la orientación (positiva si se mantiene la orientación, negativa si se invierte)</li>
+                </ul>
+                
+                <div class="visual-card">
+                  <h4>Área del paralelogramo</h4>
+                  <div class="math-animation">
+                    <span>Si \( \vec{u} = (a, c) \) y \( \vec{v} = (b, d) \)</span>
+                    <span>Área = \( |\det(\begin{pmatrix} a & b \\ c & d \end{pmatrix})| \)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: MATRICES INVERSAS -->
+          <div id="inversas" class="tab-content">
+            
+            <div class="content-section">
+              <h2>1. Definición de Matriz Inversa</h2>
+              
+              <div class="definition-box">
+                <h3>Definición</h3>
+                <p>
+                  Una matriz cuadrada \( A \) es <strong>invertible</strong> (o no singular) si existe otra matriz cuadrada \( A^{-1} \) tal que:
+                </p>
+                <div class="math-box">
+                  <span>\( A \cdot A^{-1} = A^{-1} \cdot A = I \)</span>
+                  <span>donde \( I \) es la matriz identidad</span>
+                </div>
+              </div>
+
+              <div class="condition-box dynamic-box">
+                <h3>Condición de Existencia</h3>
+                <div class="important-box">
+                  <p><strong>Teorema:</strong> Una matriz cuadrada \( A \) tiene inversa si y solo si \( \det(A) \neq 0 \).</p>
+                </div>
+                <ul class="conditions-list">
+                  <li>Si \( \det(A) = 0 \), la matriz es <strong>singular</strong> (no tiene inversa)</li>
+                  <li>Si \( \det(A) \neq 0 \), la matriz es <strong>no singular</strong> (tiene inversa)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>2. Cálculo de la Matriz Inversa</h2>
+              
+              <div class="method-box">
+                <h3>Método para Matrices 2×2</h3>
+                <p>Para una matriz \( A = \begin{pmatrix} a & b \\ c & d \end{pmatrix} \) con \( \det(A) \neq 0 \):</p>
+                
+                <div class="formula-box">
+                  <span>\( A^{-1} = \frac{1}{\det(A)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix} \)</span>
+                </div>
+                
+                <div class="step-box">
+                  <h4>Pasos:</h4>
+                  <ol class="steps-list">
+                    <li>Calcular el determinante: \( \det(A) = ad - bc \)</li>
+                    <li>Intercambiar los elementos de la diagonal principal</li>
+                    <li>Cambiar el signo de los elementos fuera de la diagonal</li>
+                    <li>Multiplicar por \( \frac{1}{\det(A)} \)</li>
+                  </ol>
+                </div>
+
+                <div class="example-box dynamic-box">
+                  <h4>Ejemplo:</h4>
+                  <span>\( A = \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix} \)</span>
+                  <span>\( \det(A) = (2)(2) - (1)(3) = 4 - 3 = 1 \)</span>
+                  <span>\( A^{-1} = \frac{1}{1} \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} = \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} \)</span>
+                </div>
+              </div>
+
+              <div class="method-box">
+                <h3>Método de la Matriz Adjunta (para matrices n×n)</h3>
+                
+                <div class="step-box">
+                  <h4>Pasos:</h4>
+                  <ol class="steps-list">
+                    <li>Calcular el determinante de \( A \)</li>
+                    <li>Formar la matriz de cofactores \( C \)</li>
+                    <li>Obtener la matriz adjunta: \( \text{adj}(A) = C^T \)</li>
+                    <li>Calcular: \( A^{-1} = \frac{1}{\det(A)} \text{adj}(A) \)</li>
+                  </ol>
+                </div>
+
+                <div class="definition-box">
+                  <h4>Cofactor</h4>
+                  <p>El cofactor \( C_{ij} \) del elemento \( a_{ij} \) es:</p>
+                  <div class="formula-box">
+                    <span>\( C_{ij} = (-1)^{i+j} \cdot M_{ij} \)</span>
+                    <span>donde \( M_{ij} \) es el menor determinante (determinante de la matriz que resulta al eliminar la fila i y la columna j)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>3. Propiedades de la Matriz Inversa</h2>
+              
+              <div class="properties-box">
+                <ul class="properties-list">
+                  <li><strong>Unicidad:</strong> Si existe, la inversa es única</li>
+                  <li><strong>Inversa de la inversa:</strong> \( (A^{-1})^{-1} = A \)</li>
+                  <li><strong>Inversa del producto:</strong> \( (AB)^{-1} = B^{-1}A^{-1} \)</li>
+                  <li><strong>Inversa de la transpuesta:</strong> \( (A^T)^{-1} = (A^{-1})^T \)</li>
+                  <li><strong>Determinante de la inversa:</strong> \( \det(A^{-1}) = \frac{1}{\det(A)} \)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: APLICACIONES -->
+          <div id="aplicaciones" class="tab-content">
+            
+            <div class="content-section">
+              <h2>1. Resolución de Sistemas de Ecuaciones Lineales</h2>
+              
+              <div class="application-box">
+                <h3>Usando la Matriz Inversa</h3>
+                <p>Para un sistema \( AX = B \) donde \( A \) es invertible:</p>
+                <div class="formula-box">
+                  <span>\( AX = B \)</span>
+                  <span>\( A^{-1}AX = A^{-1}B \)</span>
+                  <span>\( IX = A^{-1}B \)</span>
+                  <span>\( X = A^{-1}B \)</span>
+                </div>
+
+                <div class="example-box dynamic-box">
+                  <h4>Ejemplo:</h4>
+                  <p>Sistema: \( \begin{cases} 2x + y = 5 \\ 3x + 2y = 8 \end{cases} \)</p>
+                  <span>En forma matricial: \( \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix} \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 5 \\ 8 \end{pmatrix} \)</span>
+                  <span>\( A^{-1} = \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} \)</span>
+                  <span>\( \begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 2 & -1 \\ -3 & 2 \end{pmatrix} \begin{pmatrix} 5 \\ 8 \end{pmatrix} = \begin{pmatrix} 2 \\ 1 \end{pmatrix} \)</span>
+                  <span>Solución: \( x = 2, y = 1 \)</span>
+                </div>
+              </div>
+
+              <div class="application-box">
+                <h3>Regla de Cramer</h3>
+                <p>Para un sistema \( AX = B \) con \( \det(A) \neq 0 \):</p>
+                <div class="formula-box">
+                  <span>\( x_i = \frac{\det(A_i)}{\det(A)} \)</span>
+                  <span>donde \( A_i \) es la matriz que resulta de reemplazar la columna i de \( A \) por el vector \( B \)</span>
+                </div>
+
+                <div class="example-box dynamic-box">
+                  <h4>Ejemplo:</h4>
+                  <p>Mismo sistema anterior: \( \begin{cases} 2x + y = 5 \\ 3x + 2y = 8 \end{cases} \)</p>
+                  <span>\( \det(A) = 1 \)</span>
+                  <span>\( A_x = \begin{pmatrix} 5 & 1 \\ 8 & 2 \end{pmatrix}, \det(A_x) = 2 \)</span>
+                  <span>\( A_y = \begin{pmatrix} 2 & 5 \\ 3 & 8 \end{pmatrix}, \det(A_y) = 1 \)</span>
+                  <span>\( x = \frac{2}{1} = 2, y = \frac{1}{1} = 1 \)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>2. Aplicaciones Geométricas</h2>
+              
+              <div class="geometric-accordion">
+                <div class="accordion-item" data-target="transformaciones">
+                  <div class="accordion-header">
+                    <h3>Transformaciones Lineales</h3>
+                    <span class="accordion-icon">▼</span>
+                  </div>
+                  <div class="accordion-content" id="transformaciones">
+                    <div class="content-inner">
+                      <div class="geometric-image">
+                        <img src="img/transformaciones-lineales.jpg" alt="Transformaciones Lineales" onerror="this.style.display='none'">
+                      </div>
+                      <ul class="applications-list">
+                        <li><strong>Rotaciones:</strong> Las matrices de rotación tienen determinante = 1</li>
+                        <li><strong>Reflexiones:</strong> Las matrices de reflexión tienen determinante = -1</li>
+                        <li><strong>Escalamiento:</strong> El determinante indica el factor de cambio de área/volumen</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item" data-target="estabilidad">
+                  <div class="accordion-header">
+                    <h3>Análisis de Estabilidad</h3>
+                    <span class="accordion-icon">▼</span>
+                  </div>
+                  <div class="accordion-content" id="estabilidad">
+                    <div class="content-inner">
+                      <div class="geometric-image">
+                        <img src="img/analisis-estabilidad.jpg" alt="Análisis de Estabilidad" onerror="this.style.display='none'">
+                      </div>
+                      <p>En sistemas dinámicos, los determinantes ayudan a:</p>
+                      <ul class="applications-list">
+                        <li>Determinar puntos de equilibrio</li>
+                        <li>Analizar estabilidad de sistemas</li>
+                        <li>Estudiar comportamientos a largo plazo</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordion-item" data-target="areas-volumenes">
+                  <div class="accordion-header">
+                    <h3>Áreas y Volúmenes</h3>
+                    <span class="accordion-icon">▼</span>
+                  </div>
+                  <div class="accordion-content" id="areas-volumenes">
+                    <div class="content-inner">
+                      <div class="geometric-image">
+                        <img src="img/areas-volumenes.jpg" alt="Áreas y Volúmenes" onerror="this.style.display='none'">
+                      </div>
+                      <p>El determinante representa:</p>
+                      <ul class="applications-list">
+                        <li><strong>En 2D:</strong> Área del paralelogramo formado por vectores</li>
+                        <li><strong>En 3D:</strong> Volumen del paralelepípedo formado por vectores</li>
+                        <li><strong>Orientación:</strong> Signo positivo o negativo según la orientación</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="content-section">
+              <h2>3. Aplicaciones en Ciencias e Ingeniería</h2>
+              
+              <div class="application-box">
+                <h3>Física</h3>
+                <ul class="applications-list">
+                  <li>Mecánica cuántica: operadores lineales</li>
+                  <li>Electromagnetismo: cálculo de campos</li>
+                  <li>Mecánica clásica: sistemas de partículas</li>
+                </ul>
+              </div>
+
+              <div class="application-box">
+                <h3>Ingeniería</h3>
+                <ul class="applications-list">
+                  <li>Análisis estructural: matrices de rigidez</li>
+                  <li>Procesamiento de señales: transformaciones</li>
+                  <li>Control automático: sistemas de control</li>
+                </ul>
+              </div>
+
+              <div class="application-box">
+                <h3>Economía y Finanzas</h3>
+                <ul class="applications-list">
+                  <li>Modelos econométricos: sistemas de ecuaciones</li>
+                  <li>Optimización de portafolios</li>
+                  <li>Análisis de insumo-producto</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 4: VISUALIZACIONES -->
+          <div id="visualizaciones" class="tab-content">
+            
+            <div class="content-section">
+              <h2>🎨 Visualizaciones Interactivas</h2>
+              
+              <div class="visualization-grid">
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-2d-determinant">
+                      <div class="determinant-viz">
+                        <div class="vector v1"></div>
+                        <div class="vector v2"></div>
+                        <div class="parallelogram"></div>
+                        <div class="formula">det = |v1 × v2|</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Área del Paralelogramo</h4>
+                      <p>Visualización interactiva del área representada por el determinante en 2D</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-3d-determinant">
+                      <div class="cube-viz">
+                        <div class="cube-face front"></div>
+                        <div class="cube-face back"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                        <div class="formula-3d">Volume = |det(A)|</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Volumen del Paralelepípedo</h4>
+                      <p>Representación del volumen calculado mediante el determinante en 3D</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-transform">
+                      <div class="transform-viz">
+                        <div class="grid"></div>
+                        <div class="shape original"></div>
+                        <div class="shape transformed"></div>
+                        <div class="matrix-formula">[a b; c d]</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Transformación Lineal</h4>
+                      <p>Efecto de una matriz aplicada a vectores en el plano cartesiano</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-rotation">
+                      <div class="rotation-viz">
+                        <div class="rotating-shape"></div>
+                        <div class="rotation-matrix">[cosθ -sinθ; sinθ cosθ]</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Rotación Matricial</h4>
+                      <p>Animación de rotación usando matrices de transformación</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-inverse">
+                      <div class="inverse-viz">
+                        <div class="matrix-a">A</div>
+                        <div class="equals">=</div>
+                        <div class="matrix-b">A⁻¹</div>
+                        <div class="identity">I</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Matriz Inversa</h4>
+                      <p>Visualización del proceso de inversión de una matriz</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="viz-card dynamic-box">
+                  <div class="viz-image">
+                    <div class="viz-placeholder viz-system">
+                      <div class="system-viz">
+                        <div class="equation-lines">
+                          <div class="line l1"></div>
+                          <div class="line l2"></div>
+                        </div>
+                        <div class="solution-point"></div>
+                        <div class="system-matrix">AX = B</div>
+                      </div>
+                    </div>
+                    <div class="viz-overlay">
+                      <h4>Solución de Sistemas</h4>
+                      <p>Resolución gráfica de sistemas usando matrices inversas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="viz-instructions">
+                <h3>🎯 Cómo usar estas visualizaciones:</h3>
+                <ul class="instructions-list">
+                  <li><strong>Interactúa:</strong> Pasa el cursor sobre las imágenes para ver detalles</li>
+                  <li><strong>Analiza:</strong> Observa cómo los determinantes afectan las transformaciones</li>
+                  <li><strong>Conecta:</strong> Relaciona las visualizaciones con los conceptos matemáticos</li>
+                  <li><strong>Practica:</strong> Usa estas herramientas para entender mejor los conceptos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="creditos-final">
+            <hr>
+            <p class="creditos-titulo">Creado por:</p>
+            <p class="creditos-nombre">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+            <p class="creditos-universidad">Universidad de Córdoba</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

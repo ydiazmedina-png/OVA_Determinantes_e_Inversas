@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actividades | OVA</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="img/logo.webp" alt="Logo CINTIA" class="logo">
+      </div>
+
+      <nav class="menu">
+        <a class="menu-btn" href="introduccion.html">🚀 Introducción</a>
+        <a class="menu-btn" href="objetivos.html">🎯 Objetivos</a>
+        <a class="menu-btn" href="contenido.html">📚 Contenido</a>
+        <a class="menu-btn active" href="actividades.html">✍️ Actividades</a>
+        <a class="menu-btn" href="evaluacion.html">✔️ Evaluación</a>
+        <a class="menu-btn" href="recursos.html">📖 Recursos</a>
+        <a class="menu-btn" href="bibliografia.html">📚 Bibliografía</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-section">
+        <div class="page-card">
+          <h1>Actividades interactivas</h1>
+
+          <div class="activities-box">
+
+            <!-- ACTIVIDAD 1 -->
+            <div class="activity-card">
+              <h3>Actividad 1.</h3>
+              <p>
+                Encuentra las palabras clave relacionadas con el tema. Selecciona la palabra arrastrando el cursor en línea recta.
+              </p>
+
+              <div class="wordsearch-layout">
+                <div id="wordsearch-grid" class="wordsearch-grid"></div>
+
+                <div class="wordsearch-panel">
+                  <h4>Palabras por encontrar</h4>
+                  <ul id="word-list" class="word-list">
+                    <li data-word="DETERMINANTE">DETERMINANTE</li>
+                    <li data-word="INVERSA">INVERSA</li>
+                    <li data-word="MATRIZ">MATRIZ</li>
+                    <li data-word="SARRUS">SARRUS</li>
+                    <li data-word="DIAGONAL">DIAGONAL</li>
+                  </ul>
+
+                  <div class="activity-buttons">
+                    <button id="check-wordsearch-btn">Verificar</button>
+                    <button id="reset-wordsearch-btn" class="secondary-btn">Reiniciar</button>
+                  </div>
+
+                  <div id="wordsearch-feedback" class="activity-feedback"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ACTIVIDAD 2 -->
+            <div class="activity-card">
+              <h3>Actividad 2.</h3>
+              <p>
+                Completa el procedimiento para calcular el determinante de la matriz
+                \( A=\begin{pmatrix} 3 & 2 \\ 1 & 4 \end{pmatrix} \).
+              </p>
+
+              <div class="fill-activity">
+                <div class="fill-step">
+                  <span>1. Fórmula del determinante 2×2:</span>
+                  <div class="fill-answer-line">
+                    <strong>\(\det(A)=\)</strong>
+                    <input type="text" id="det-fill-1" placeholder="Escribe la fórmula">
+                  </div>
+                </div>
+
+                <div class="fill-step">
+                  <span>2. Sustituyendo valores:</span>
+                  <div class="fill-answer-line">
+                    <strong>\(\det(A)=\)</strong>
+                    <input type="text" id="det-fill-2" placeholder="Sustituye los valores">
+                  </div>
+                </div>
+
+                <div class="fill-step">
+                  <span>3. Resultado final:</span>
+                  <div class="fill-answer-line">
+                    <strong>\(\det(A)=\)</strong>
+                    <input type="text" id="det-fill-3" placeholder="Escribe el resultado">
+                  </div>
+                </div>
+              </div>
+
+              <div class="activity-buttons">
+                <button id="check-det-btn">Comprobar</button>
+                <button id="reset-det-btn" class="secondary-btn">Reiniciar</button>
+              </div>
+
+              <div id="det-feedback" class="activity-feedback"></div>
+            </div>
+
+            <!-- ACTIVIDAD 3 -->
+            <div class="activity-card">
+              <h3>Actividad 3.</h3>
+              <p>
+                Analiza cada matriz y selecciona si tiene inversa o no, según el valor de su determinante.
+              </p>
+
+              <div class="inverse-cards">
+
+                <div class="inverse-card" data-correct="si">
+                  <div class="inverse-matrix">
+                    \( \begin{pmatrix} 2 & 1 \\ 3 & 2 \end{pmatrix} \)
+                  </div>
+                  <p class="inverse-question">¿Esta matriz tiene inversa?</p>
+                  <div class="inverse-options">
+                    <button class="inverse-btn" data-value="si">Sí</button>
+                    <button class="inverse-btn" data-value="no">No</button>
+                  </div>
+                  <div class="inverse-feedback"></div>
+                </div>
+
+                <div class="inverse-card" data-correct="no">
+                  <div class="inverse-matrix">
+                    \( \begin{pmatrix} 1 & 2 \\ 2 & 4 \end{pmatrix} \)
+                  </div>
+                  <p class="inverse-question">¿Esta matriz tiene inversa?</p>
+                  <div class="inverse-options">
+                    <button class="inverse-btn" data-value="si">Sí</button>
+                    <button class="inverse-btn" data-value="no">No</button>
+                  </div>
+                  <div class="inverse-feedback"></div>
+                </div>
+
+                <div class="inverse-card" data-correct="si">
+                  <div class="inverse-matrix">
+                    \( \begin{pmatrix} 5 & 0 \\ 0 & 3 \end{pmatrix} \)
+                  </div>
+                  <p class="inverse-question">¿Esta matriz tiene inversa?</p>
+                  <div class="inverse-options">
+                    <button class="inverse-btn" data-value="si">Sí</button>
+                    <button class="inverse-btn" data-value="no">No</button>
+                  </div>
+                  <div class="inverse-feedback"></div>
+                </div>
+
+              </div>
+
+              <div class="activity-buttons">
+                <button id="check-inverse-btn">Finalizar actividad</button>
+                <button id="reset-inverse-btn" class="secondary-btn">Reiniciar</button>
+              </div>
+
+              <div id="inverse-summary" class="activity-feedback"></div>
+            </div>
+
+          </div>
+
+          <div class="creditos-final">
+            <hr>
+            <p class="creditos-titulo">Creado por:</p>
+            <p class="creditos-nombre">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+            <p class="creditos-universidad">Universidad de Córdoba</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evaluación | OVA</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="logo-box">
+        <img src="img/logo.webp" alt="Logo CINTIA" class="logo">
+      </div>
+
+      <nav class="menu">
+        <a class="menu-btn" href="introduccion.html">🚀 Introducción</a>
+        <a class="menu-btn" href="objetivos.html">🎯 Objetivos</a>
+        <a class="menu-btn" href="contenido.html">📚 Contenido</a>
+        <a class="menu-btn" href="actividades.html">✍️ Actividades</a>
+        <a class="menu-btn active" href="evaluacion.html">✔️ Evaluación</a>
+        <a class="menu-btn" href="recursos.html">📖 Recursos</a>
+        <a class="menu-btn" href="bibliografia.html">📚 Bibliografía</a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+      <section class="page-section">
+        <div class="page-card">
+       
+
+          <div class="quiz-box">
+            <div class="quiz-header">
+              <p>
+               Comprueba lo que has aprendido. Selecciona la respuesta correcta para cada pregunta.
+              </p>
+            </div>
+
+            <div id="quiz-container">
+
+              <div class="quiz-question" data-correct="b" data-answered="false">
+                <h3>1. ¿Qué es un determinante?</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="a">A. Una matriz que siempre tiene inversa</button>
+                  <button class="quiz-option" data-option="b">B. Un valor numérico asociado a una matriz cuadrada</button>
+                  <button class="quiz-option" data-option="c">C. Una operación que solo se aplica a vectores</button>
+                  <button class="quiz-option" data-option="d">D. Una suma entre filas y columnas</button>
+                </div>
+                <div class="quiz-feedback"></div>
+                <div class="feedback-correct" style="display:none;">Correcto. El determinante es un valor numérico asociado a una matriz cuadrada.</div>
+                <div class="feedback-incorrect" style="display:none;">Recuerda que el determinante no es una matriz ni una suma: es un valor numérico calculado a partir de una matriz cuadrada.</div>
+              </div>
+
+              <div class="quiz-question" data-correct="c" data-answered="false">
+                <h3>2. Una matriz cuadrada tiene inversa cuando:</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="a">A. Tiene dos filas</button>
+                  <button class="quiz-option" data-option="b">B. Su diagonal principal es positiva</button>
+                  <button class="quiz-option" data-option="c">C. Su determinante es distinto de cero</button>
+                  <button class="quiz-option" data-option="d">D. Sus filas son iguales</button>
+                </div>
+                <div class="quiz-feedback"></div>
+                <div class="feedback-correct" style="display:none;">Correcto. La condición fundamental de existencia de la inversa es que el determinante sea diferente de cero.</div>
+                <div class="feedback-incorrect" style="display:none;">La condición correcta es que el determinante de la matriz sea distinto de cero.</div>
+              </div>
+
+              <div class="quiz-question" data-correct="a" data-answered="false">
+                <h3>3. El determinante de la matriz \(\begin{pmatrix} 4 & 2 \\ 1 & 3 \end{pmatrix}\) es:</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="a">A. 10</button>
+                  <button class="quiz-option" data-option="b">B. 12</button>
+                  <button class="quiz-option" data-option="c">C. 7</button>
+                  <button class="quiz-option" data-option="d">D. 5</button>
+                </div>
+                <div class="quiz-feedback"></div>
+                <div class="feedback-correct" style="display:none;">Correcto. En una matriz 2×2 se calcula como ad - bc, es decir, (4×3) - (2×1) = 10.</div>
+                <div class="feedback-incorrect" style="display:none;">Revisa la fórmula del determinante 2×2: ad - bc.</div>
+              </div>
+
+              <div class="quiz-question" data-correct="d" data-answered="false">
+                <h3>4. La regla de Sarrus se utiliza para calcular determinantes de matrices:</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="a">A. 2×2</button>
+                  <button class="quiz-option" data-option="b">B. 4×4</button>
+                  <button class="quiz-option" data-option="c">C. De una sola fila</button>
+                  <button class="quiz-option" data-option="d">D. 3×3</button>
+                </div>
+                <div class="quiz-feedback"></div>
+                <div class="feedback-correct" style="display:none;">Correcto. La regla de Sarrus se aplica en matrices de orden 3×3.</div>
+                <div class="feedback-incorrect" style="display:none;">Recuerda que la regla de Sarrus es un procedimiento específico para matrices 3×3.</div>
+              </div>
+
+              <div class="quiz-question" data-correct="b" data-answered="false">
+                <h3>5. Una de las aplicaciones principales de la matriz inversa es:</h3>
+                <div class="quiz-options">
+                  <button class="quiz-option" data-option="a">A. Calcular el rango de cualquier matriz rectangular</button>
+                  <button class="quiz-option" data-option="b">B. Resolver sistemas de ecuaciones lineales</button>
+                  <button class="quiz-option" data-option="c">C. Convertir vectores en escalares</button>
+                  <button class="quiz-option" data-option="d">D. Cambiar el orden de las filas</button>
+                </div>
+                <div class="quiz-feedback"></div>
+                <div class="feedback-correct" style="display:none;">Correcto. La matriz inversa permite resolver sistemas de ecuaciones de manera directa usando operaciones matriciales.</div>
+                <div class="feedback-incorrect" style="display:none;">La matriz inversa se usa principalmente para resolver sistemas de ecuaciones lineales y simplificar cálculos matriciales.</div>
+              </div>
+
+            </div>
+
+            <div class="quiz-actions">
+              <button id="finish-quiz-btn">Finalizar evaluación</button>
+              <button id="reset-quiz-btn">Reiniciar</button>
+            </div>
+
+            <div id="quiz-result" class="quiz-result"></div>
+          </div>
+
+          <div class="creditos-final">
+            <hr>
+            <p class="creditos-titulo">Creado por:</p>
+            <p class="creditos-nombre">Centro de Innovación en TIC para el apoyo de la Docencia CINTIA</p>
+            <p class="creditos-universidad">Universidad de Córdoba</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
